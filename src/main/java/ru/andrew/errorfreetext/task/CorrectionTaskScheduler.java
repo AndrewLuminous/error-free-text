@@ -8,13 +8,13 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TaskScheduler {
-    private static final Logger log = LoggerFactory.getLogger(TaskScheduler.class);
+public class CorrectionTaskScheduler {
+    private static final Logger log = LoggerFactory.getLogger(CorrectionTaskScheduler.class);
     private final TaskProcessor processor;
     private final TaskService tasks;
     private volatile boolean ready;
 
-    public TaskScheduler(TaskProcessor processor, TaskService tasks) {
+    public CorrectionTaskScheduler(TaskProcessor processor, TaskService tasks) {
         this.processor = processor;
         this.tasks = tasks;
     }
