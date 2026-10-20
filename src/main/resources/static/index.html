@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Error Free Text — проверка текста</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="/">Error Free Text<span class="dot">.</span></a><span>Текст без ошибок</span></header>
+<main>
+  <div class="intro"><span class="eyebrow">ПРОВЕРКА ОРФОГРАФИИ</span>
+    <h1>Хорошие мысли.<br><span>Правильные слова.</span></h1>
+    <p>Вставь текст — мы проверим написание и предложим исправленный вариант.</p>
+  </div>
+  <form id="form">
+    <div class="panels">
+      <section class="panel">
+        <div class="panel-heading"><label for="text">Твой текст</label><select id="language" aria-label="Язык текста"><option value="RU">Русский</option><option value="EN">English</option></select></div>
+        <textarea id="text" placeholder="Например: Превет! Это небальшой текст для проверки." maxlength="100000" required minlength="3"></textarea>
+        <div class="panel-footer"><span id="count">0 / 100 000</span><button type="button" class="text-button" id="example">Вставить пример</button></div>
+      </section>
+      <section class="panel result-panel" aria-labelledby="result-heading">
+        <div class="panel-heading"><span id="result-heading">Результат</span><span id="badge" class="badge">Ожидает текст</span></div>
+        <div id="result" class="result placeholder">Здесь появится исправленный текст.</div>
+        <div class="panel-footer"><span id="task-id"></span><button type="button" class="text-button" id="copy" disabled>Скопировать</button></div>
+      </section>
+    </div>
+    <div class="actions"><button class="primary" id="submit" type="submit">Проверить текст <span>↗</span></button><p id="status" role="status" aria-live="polite">Русский и английский · до 100 000 символов</p></div>
+  </form>
+  <p class="privacy">Текст отправляется в Яндекс Спеллер для проверки и сохраняется вместе с результатом. Не вводи пароли и конфиденциальные данные.</p>
+</main>
+<footer><span>Error Free Text</span><span>Проверка с помощью Яндекс Спеллера</span></footer>
+</body>
+</html>

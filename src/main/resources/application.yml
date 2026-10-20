@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: error-free-text
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/error_free_text}
+    username: ${DB_USER:error_free_text}
+    password: ${DB_PASSWORD:}
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    default-property-inclusion: non_null
+server:
+  error:
+    include-message: never
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+app:
+  max-text-length: ${MAX_TEXT_LENGTH:100000}
+  scheduler-delay: ${SCHEDULER_DELAY:3000}
+  speller-url: ${SPELLER_URL:https://speller.yandex.net/services/spellservice.json/checkTexts}
+  speller-timeout: ${SPELLER_TIMEOUT:10s}

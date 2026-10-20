@@ -1,0 +1,43 @@
+name: error-free-text
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ${APP_DOCKERFILE:-Dockerfile}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${APP_PORT:-8090}:8080"
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/error_free_text
+      DB_USER: error_free_text
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?Укажите POSTGRES_PASSWORD в .env}
+    depends_on:
+      db:
+        condition: service_healthy
+    mem_limit: 640m
+    cpus: 0.75
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/actuator/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: error_free_text
+      POSTGRES_USER: error_free_text
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Укажите POSTGRES_PASSWORD в .env}
+    command: ["postgres", "-c", "max_connections=30", "-c", "shared_buffers=32MB"]
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    mem_limit: 256m
+    cpus: 0.25
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U error_free_text -d error_free_text"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  postgres_data:
