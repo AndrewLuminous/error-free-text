@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
+  <title id="title">Error Free Text</title>
+  <desc id="desc">Асинхронная проверка орфографии. Русский и английский. REST API и веб-интерфейс.</desc>
+  <rect width="900" height="220" rx="22" fill="#f4f6f2"/>
+  <rect x="24" y="24" width="852" height="172" rx="16" fill="#fcfdf9" stroke="#dde3d8"/>
+  <text x="450" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="3" fill="#5c7851">ПРОВЕРКА ОРФОГРАФИИ</text>
+  <text x="450" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#263c2c">Error Free Text<tspan fill="#549d3e">.</tspan></text>
+  <text x="450" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5c7851">Русский и английский · REST API · Веб-интерфейс</text>
+</svg>

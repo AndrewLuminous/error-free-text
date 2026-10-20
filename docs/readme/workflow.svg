@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="90" viewBox="0 0 900 90" role="img" aria-labelledby="title">
+  <title id="title">Как работает приложение</title>
+  <rect width="900" height="90" rx="16" fill="#f4f6f2"/>
+  <path d="M325 72H575" stroke="#549d3e" stroke-width="3" stroke-linecap="round"/>
+  <text x="450" y="51" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#263c2c">Как работает приложение</text>
+</svg>
