@@ -1,11 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;
-    500;
-    600;
-    700;
-    800&display=swap');
-
 :root {
-    font-family:Manrope,system-ui,sans-serif;
+    font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
     color:#212624;
     background:#f4f6f2;
     font-synthesis:none
@@ -57,18 +51,6 @@ main {
     font-weight:800;
     letter-spacing:2px;
     color:#5c7851
-}
-
-h1 {
-    font-size:clamp(36px,5vw,62px);
-    line-height:1.12;
-    letter-spacing:-2.5px;
-    font-weight:700;
-    margin:22px 0
-}
-
-h1 span {
-    color:#7a8875
 }
 
 .intro p {
@@ -226,14 +208,6 @@ textarea::placeholder,.placeholder {
     line-height:1.6
 }
 
-.privacy {
-    font-size:11px;
-    color:#90988a;
-    line-height:1.7;
-    max-width:650px;
-    margin-top:24px
-}
-
 footer {
     border-top:1px solid #dfe5d9;
     margin-top:24px;
@@ -269,10 +243,6 @@ main {
 
 .intro p {
     font-size:14px
-}
-
-h1 {
-    letter-spacing:-1.5px
 }
 
 .actions {
